@@ -6,6 +6,5 @@
 Create a search HTML page by linking google search using inline, external and internal(tags)
 
 ### Assignment2
-Html Tags, HTML5 tags and tables
-HTML Form Elements
+Html Tags, HTML5 tags and tables, HTML Form Elements
 
