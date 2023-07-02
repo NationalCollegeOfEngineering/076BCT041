@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Search Page</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!--External css-->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!--Internal css-->
+    <style>
+        .input-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .logo-img {
+            width: 350px;
+            height: auto;
+            margin-top: -100px;
+        }
+        
+        .form-outline {
+            width: 850px !important;
+            height: 48px;
+            margin-right: -60px;
+            margin-top: -50px;
+        }
+
+        .btn-primary {
+            height: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-group">
+        <img src="img/logo.png" alt="Logo" class="logo-img">
+        <form action="https://www.google.com/search" method="GET" class="d-flex">
+            <div class="form-outline flex-grow">
+                <input id="search-focus" type="search" id="form1" class="form-control" name="q" />
+                <label class="form-label" for="form1">Search</label>
+            </div>
+            <!--Inline css-->
+            <button type="submit" class="btn btn-primary" style="margin-top: -50px">
+        <i class="fas fa-search"></i>
+      </button>
+        </form>
+    </div>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>
