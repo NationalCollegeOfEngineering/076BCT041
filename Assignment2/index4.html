@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Include Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>HTML5 Tags</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="container">
+      <h2 class="mb-3">HTML5 Tags</h2>
+      <div class="table-responsive custom-table-responsive">
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th scope="col">SN</th>
+              <th scope="col">Form Elements</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--1-->
+            <tr scope="row" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+              aria-controls="collapseOne" class="clickable-row">
+              <td>1</td>
+              <td>Text Box Input</td>
+              <td>
+                <b style="color:gold">Text box input</b> is used to capture text such as a <b style="color:aqua">name,
+                  email, address</b> or any other type of text
+              </td>
+            </tr>
+
+            <tr id="collapseOne" class="collapse" aria-labelledby="headingOne">
+              <td colspan="4">
+                <div class="card-body">
+                  <div class="code-box">
+                    <code id="code-snippet1">
+                      &lt;input type="text" name="name" placeholder="Enter your name"&gt;
+                    </code>
+                    <button onclick="copyCodeSnippet('code-snippet1')"><i class="fas fa-clipboard"></i> &nbsp;Copy
+                      code</button>
+                  </div>
+
+                  <div class="output">
+                    <input type="text" name="name" placeholder="Enter your name">
+                  </div>
+
+                  <div class="code-box">
+                    <code id="code-snippet2">
+                    &lt;input type="email" name="email" placeholder="Enter your email"&gt;
+                  </code>
+                    <button onclick="copyCodeSnippet('code-snippet2')"><i class="fas fa-clipboard"></i> &nbsp;Copy
+                      code</button>
+                  </div>
+
+                  <div class="output">
+                    <input type="text" name="email" placeholder="Enter your email">
+                  </div>
+
+                </div>
+              </td>
+            </tr>
+
+            <tr class="spacer">
+              <td colspan="100"></td>
+            </tr>
+
+            <!--2-->
+            <tr scope="row" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+              aria-controls="collapseTwo" class="clickable-row">
+              <td>2</td>
+              <td>Password Input</td>
+              <td>
+                <b style="color:gold">Password input</b> does not show the text as the user types
+              </td>
+            </tr>
+
+            <tr id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+              <td colspan="4">
+                <div class="card-body">
+                  <div class="code-box">
+                    <code id="code-snippet3">
+                      &lt;input type="password" name="password" placeholder="Enter your password"&gt;
+                    </code>
+                    <button onclick="copyCodeSnippet('code-snippet3')"><i class="fas fa-clipboard"></i> &nbsp;Copy
+                      code</button>
+                  </div>
+
+                  <div class="output">
+                    <input type="password" name="password" placeholder="Enter your password">
+                  </div>
+
+              </td>
+            </tr>
+
+            <tr class="spacer">
+              <td colspan="100"></td>
+            </tr>
+
+            <!--3-->
+            <tr scope="row" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+              aria-controls="collapseThree" class="clickable-row">
+              <td>3</td>
+              <td>Select Drop Down</td>
+              <td>
+                <b style="color:gold">Drop Down</b> specifies list of options that a user can choose when <b style="color:aqua">selecting a Drop Down menu</b>
+              </td>
+            </tr>
+
+            <tr id="collapseThree" class="collapse" aria-labelledby="headingThree">
+              <td colspan="4">
+                <div class="card-body">
+                  <div class="code-box">
+                    <code id="code-snippet4">
+                      &lt;select name="Programming Language"&gt;<br>
+                        &emsp;&lt;option value="1">Python&lt;/option&gt;<br>
+                        &emsp;&lt;option value="2">C/C++/C#&lt;/option&gt;<br>
+                        &emsp;&lt;option value="3">Java/JavaScript&lt;/option&gt;<br>
+                      &lt;/select&gt;
+                    </code>
+                    <button onclick="copyCodeSnippet('code-snippet4')"><i class="fas fa-clipboard"></i> &nbsp;Copy
+                      code</button>
+                  </div>
+                  <div class="output">
+                    Select your programming language<br>
+                    <select name="Programming Language">
+                      <option value="1">Python</option>
+                      <option value="2">C/C++/C#</option>
+                      <option value="3">Java/JavaScript</option>
+                      </select>
+                  </div>
+
+              </td>
+            </tr>
+
+            <tr class="spacer">
+              <td colspan="100"></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Add an event listener to each clickable row
+    const clickableRows = document.querySelectorAll('.clickable-row');
+    clickableRows.forEach(row => {
+      row.addEventListener('click', () => {
+        // Toggle the "collapse" class on the collapsible content
+        const target = document.querySelector(row.dataset.target);
+        target.classList.toggle('show');
+        // Toggle the "aria-expanded" attribute
+        const expanded = row.getAttribute('aria-expanded') === 'true';
+        row.setAttribute('aria-expanded', !expanded);
+      });
+    });
+
+    // Function to copy the code snippet to the clipboard
+    function copyCodeSnippet(id) {
+      const codeSnippet = document.getElementById(id);
+      const range = document.createRange();
+      range.selectNode(codeSnippet);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+
+    }
+  </script>
+</body>
+
+</html>
