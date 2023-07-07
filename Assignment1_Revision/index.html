@@ -9,17 +9,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
     <!-- Include the Font Awesome JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <!-- External css -->
     <link rel="stylesheet" href="style.css">
+    <!-- External script -->
+    <script src="script.js"></script>
+
 
 </head>
 
 <style>
-/* 
+    /* 
     #cat-animation {
         position:absolute;
         top: 50px ;
@@ -42,7 +47,7 @@
                 <div id="search-container" style="margin-top: 5%;">
                     <!-- <div id="cat-animation"></div> -->
                     <div id="search-input-container">
-                        
+
                         <img src="https://assets.codepen.io/1468070/Google+G+Icon.png" alt="" />
                         <input type="text" placeholder="Search anything" id="search" onkeyup="searchOnEnter(event)" />
                     </div>
@@ -50,56 +55,49 @@
                     <button id="image-button" onclick="googleSearch();" type="button">
                         <i class="fa-regular fa-search"></i>
                     </button>
-
-                    <!-- <button id="mic-button" type="button">
-                        <i class="fa-regular fa-microphone"></i>
-                    </button> -->
-
                 </div>
 
-                <div class="mycontainer" >
+                <div class="mycontainer">
                     <div id="header-container">
                         <div class='parent'>
                             <div class='child'> <button type="button" id="user-menu-button"
-                                    style="margin-right: 10%; margin-top: 10%;">
-                                <div class="social-buttons">
+                                    style="margin-right: 14%; margin-top: 10%; justify-content: center;">
+                                    <div class="social-buttons">
 
-                                    <a href="https://www.instagram.com/" class="social-button social-button--instagram"
-                                        aria-label="Instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    <a href="https://www.youtube.com/" class="social-button social-button--youtube"
-                                        aria-label="YouTube">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                    <a href="https://www.facebook.com/" class="social-button social-button--facebook"
-                                        aria-label="Facebook">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#" class="social-button social-button--linkedin" aria-label="LinkedIn">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="#" class="social-button social-button--snapchat" aria-label="Snapchat">
-                                        <i class="fab fa-snapchat-ghost"></i>
-                                    </a>
-                                    <a href="https://github.com/" class="social-button social-button--github"
-                                        aria-label="GitHub">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="https://codepen.io/" class="social-button social-button--codepen"
-                                        aria-label="CodePen">
-                                        <i class="fab fa-codepen"></i>
-                                    </a>
-                                    <a href="https://www.python.org/downloads/" class="social-button social-button--python"
-                                        aria-label="Python">
-                                        <i class="fab fa-python"></i>
-                                    </a>
+                                        <a href="https://www.instagram.com/"
+                                            class="social-button social-button--instagram" aria-label="Instagram">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                        <a href="https://www.youtube.com/" class="social-button social-button--youtube"
+                                            aria-label="YouTube">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                        <a href="https://www.facebook.com/"
+                                            class="social-button social-button--facebook" aria-label="Facebook">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#" class="social-button social-button--linkedin" aria-label="LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="#" class="social-button social-button--snapchat" aria-label="Snapchat">
+                                            <i class="fab fa-snapchat-ghost"></i>
+                                        </a>
+                                        <a href="https://github.com/" class="social-button social-button--github"
+                                            aria-label="GitHub">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <a href="https://codepen.io/" class="social-button social-button--codepen"
+                                            aria-label="CodePen">
+                                            <i class="fab fa-codepen"></i>
+                                        </a>
+                                        <a href="https://www.python.org/downloads/"
+                                            class="social-button social-button--python" aria-label="Python">
+                                            <i class="fab fa-python"></i>
+                                        </a>
 
-                                </div>
+                                    </div>
                             </div>
                         </div>
-
-
 
 
                     </div>
@@ -175,70 +173,10 @@
                             </div>
                         </a>
                     </div>
-
-
                 </div>
-
             </div>
         </div>
     </div>
-
-    <!-- updating the code title and flaticon icon  -->
-    <script>
-        //  get the elements from the DOM
-
-        const savedUrl = localStorage.getItem('url');
-        const nameSpan = document.querySelector('.name');
-        const urlSpan = document.querySelector('.url');
-        const icon = document.querySelector('.fa-stack-overflow');
-        const link = document.querySelector('#link');
-
-        // listen for changes in the content of the name and url spans
-        // nameSpan.addEventListener('input', updateLink);
-        urlSpan.addEventListener('input', updateLink);
-
-        function updateLink() {
-            // update the text content of the name span with the root domain
-            const domain = new URL('http://' + urlSpan.textContent).hostname.replace('www.', '');
-            link.querySelector('.name').textContent = domain;
-
-            // update the href of the link
-            link.href = 'http://' + urlSpan.textContent;
-
-            // update the icon class
-            const iconClass = 'fa-brands fa-' + domain.split('.')[0];
-            icon.className = iconClass;
-
-
-
-            // save the URL to local storage
-            localStorage.setItem('url', urlSpan.textContent);
-        }
-
-        // retrieve the saved URL from local storage when the page loads
-        window.addEventListener('load', function () {
-            const savedUrl = localStorage.getItem('url');
-            if (savedUrl) {
-                urlSpan.textContent = savedUrl;
-                updateLink();
-            }
-        });
-
-        function googleSearch() {
-        var text = document.getElementById("search").value;
-        var cleanQuery = text.replace(" ", "+");
-        var url = 'https://www.google.com/search?q=' + cleanQuery;
-
-        window.location.href = url;
-    }
-
-    function searchOnEnter(event) {
-        if (event.key === "Enter") {
-            googleSearch();
-        }
-    }
-
-    </script>
 
     <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
 </body>

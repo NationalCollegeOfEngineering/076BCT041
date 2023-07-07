@@ -308,3 +308,9 @@ input, select {
   border: none;
   cursor: pointer;
 }
+
+#favcolor{
+  width:5%;
+  padding:5%;
+  border:1px solid #ccc;
+}
