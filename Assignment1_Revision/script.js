@@ -37,15 +37,15 @@
     });
 
     function googleSearch() {
-        var text = document.getElementById("search").value;
-        var cleanQuery = text.replace(" ", "+");
-        var url = 'https://www.google.com/search?q=' + cleanQuery;
+      var text = document.getElementById("search").value;
+      var cleanQuery = text.replace(" ", "+");
+      var url = 'https://www.google.com/search?q=' + cleanQuery;
 
-        window.location.href = url;
-    }
+      window.location.href = url;
+  }
 
-    function searchOnEnter(event) {
-        if (event.key === "Enter") {
-            googleSearch();
-        }
-    }
+  function searchOnEnter(event) {
+      if (event.key === "Enter") {
+          googleSearch();
+      }
+  }
