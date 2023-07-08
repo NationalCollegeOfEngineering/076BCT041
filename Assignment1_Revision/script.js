@@ -21,8 +21,6 @@
         const iconClass = 'fa-brands fa-' + domain.split('.')[0];
         icon.className = iconClass;
 
-
-
         // save the URL to local storage
         localStorage.setItem('url', urlSpan.textContent);
     }

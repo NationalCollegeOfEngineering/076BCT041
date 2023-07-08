@@ -188,7 +188,7 @@ button, a, input {
   }
 
   #search-input-container {
-    width: 450px;
+    width: 455px;
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -259,7 +259,7 @@ button, a, input {
 }
 
 #apps-container > a > .label > :is(.name, .url) {
-  width: 100%;
+  width: 120%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -267,6 +267,9 @@ button, a, input {
 
 #apps-container > a > .label > .name {
   font-size: 0.8rem;
+}
+#apps-container > a > .label > .name:hover {
+  color:gold;
 }
 
 #apps-container > a > .label > .url {
@@ -277,6 +280,7 @@ button, a, input {
 #apps-container > a:is(:hover, :focus) {
   background-color: rgb(255 255 255 / 16%);
   transform: scale(1.02) ;
+
 }
 
 #apps-container > a:first-child {
@@ -636,9 +640,6 @@ svg {
   pointer-events: none;
 }
 
-span.url:hover{
-    color: gold !important;
-}
 
 .dropdown-button:hover,
 .dropdown-button:focus {
