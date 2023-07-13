@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
+
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -39,8 +40,8 @@
               <td>
                 <b style="color:gold">Text box input</b> is used to capture text such as a <b style="color:aqua">name,
                   email, address</b> or any other type of text
-              </td>
             </tr>
+           
 
             <tr id="collapseOne" class="collapse" aria-labelledby="headingOne">
               <td colspan="4">
@@ -156,7 +157,7 @@
               <td>4</td>
               <td>Color Input</td>
               <td>
-                <b style="color:gold">Color Input </b> <b style="color:aqua">color picker</b>
+                <b style="color:gold">Color Input </b>lets us pick a <b style="color:aqua">color</b>
               </td>
             </tr>
 
@@ -165,18 +166,16 @@
                 <div class="card-body">
                   <div class="code-box">
                     <code id="code-snippet5">
-                      &lt;select name="Programming Language"&gt;<br>
-                        &emsp;&lt;option value="1">Python&lt;/option&gt;<br>
-                        &emsp;&lt;option value="2">C/C++/C#&lt;/option&gt;<br>
-                        &emsp;&lt;option value="3">Java/JavaScript&lt;/option&gt;<br>
-                      &lt;/select&gt;
+                      Select color <br>
+                      &lt;input type="color" id="favcolor" name="favcolor" value="#000"&gt;
                     </code>
                     <button onclick="copyCodeSnippet('code-snippet5')"><i class="fas fa-clipboard"></i> &nbsp;Copy
                       code</button>
                   </div>
                   <div class="output">
-                    Select your programming language<br>
-                    <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                    Select color &emsp;
+                    <input type="color" id="favcolor" name="favcolor" value="#ff0000">&emsp; Selected&emsp;
+                    <button id="colorButton"></button>
                   </div>
 
               </td>
@@ -185,6 +184,88 @@
             <tr class="spacer">
               <td colspan="100"></td>
             </tr>
+
+            <!--5-->
+            <tr scope="row" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+              aria-controls="collapseFive" class="clickable-row">
+              <td>5</td>
+              <td>Checkbox</td>
+              <td>
+                <b style="color:gold">Checkbox</b> is square box that is <b style="color:aqua">ticked</b> when activated
+              </td>
+            </tr>
+
+            <tr id="collapseFive" class="collapse" aria-labelledby="headingFive">
+              <td colspan="5">
+                <div class="card-body">
+                  <div class="code-box">
+                    <code id="code-snippet6">
+                    Select any two <br>
+                    &lt;input type="checkbox" name="subject" value="Web"&gt;Web <br>
+                    &lt;input type="checkbox" name="subject" value="networking"&gt;Networking <br>
+                    &lt;input type="checkbox" name="subject" value="graphics"&gt;Graphics <br>
+                    &lt;input type="checkbox" name="subject" value="python"&gt;Python <br>
+                  </code>
+                    <button onclick="copyCodeSnippet('code-snippet6')"><i class="fas fa-clipboard"></i> &nbsp;Copy
+                      code</button>
+                  </div>
+                  <div class="output">
+                    <label for="">Select any two</label> <br>
+                    <input type="checkbox" name="subject" value="Web">Web
+                    <input type="checkbox" name="subject" value="networking">Networking
+                    <input type="checkbox" name="subject" value="graphics">Graphics
+                    <input type="checkbox" name="subject" value="python">Python
+                  </div>
+
+              </td>
+            </tr>
+
+            <tr class="spacer">
+              <td colspan="100"></td>
+            </tr>
+
+            <!--6-->
+            <tr scope="row" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+              aria-controls="collapseSix" class="clickable-row">
+              <td>6</td>
+              <td>File Upload</td>
+              <td>
+                <b style="color:gold">File Upload</b> allows users to browse and <b style="color:aqua">select a file</b>
+                from their device
+              </td>
+            </tr>
+
+            <tr id="collapseSix" class="collapse" aria-labelledby="headingSix">
+              <td colspan="6">
+                <div class="card-body">
+                  <div class="code-box">
+                    <code id="code-snippet7">
+                  &lt;form&gt;<br>
+                    &lt;label for="fileUpload">Select a file:&lt;/label&gt;<br>
+                    &lt;input type="file" id="fileUpload" name="fileUpload"&gt;<br>
+                    &lt;input type="submit" value="Upload"&gt;<br>
+                  &lt;/form&gt;
+                 <button onclick="copyCodeSnippet('code-snippet7')"><i class="fas fa-clipboard"></i> &nbsp;Copy
+                   code</button>
+               </div>
+
+               <div class="output">
+                <form>
+                  <label for="fileUpload">Select a file:</label>
+                  <input type="file" id="fileUpload" name="fileUpload">
+                  <input type="submit" value="Upload">
+                </form>
+               </div>
+
+           </td>
+         </tr>
+
+         <tr class="spacer">
+           <td colspan="100"></td>
+         </tr>
+
+
+
 
           </tbody>
         </table>
@@ -205,33 +286,8 @@
   <!-- Include jQuery and Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 
-  <script>
-    // Add an event listener to each clickable row
-    const clickableRows = document.querySelectorAll('.clickable-row');
-    clickableRows.forEach(row => {
-      row.addEventListener('click', () => {
-        // Toggle the "collapse" class on the collapsible content
-        const target = document.querySelector(row.dataset.target);
-        target.classList.toggle('show');
-        // Toggle the "aria-expanded" attribute
-        const expanded = row.getAttribute('aria-expanded') === 'true';
-        row.setAttribute('aria-expanded', !expanded);
-      });
-    });
-
-    // Function to copy the code snippet to the clipboard
-    function copyCodeSnippet(id) {
-      const codeSnippet = document.getElementById(id);
-      const range = document.createRange();
-      range.selectNode(codeSnippet);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      document.execCommand('copy');
-      window.getSelection().removeAllRanges();
-
-    }
-  </script>
 </body>
 
 </html>
