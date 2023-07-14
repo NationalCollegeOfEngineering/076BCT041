@@ -232,7 +232,6 @@ h2 {
   cursor: pointer;
   transition: border-color 0.3s;
   /* Add a transition for smooth effect */
-  text-clo
 }
 
 .styled-button-pagination:hover {
