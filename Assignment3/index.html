@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="time">
+            <div class="circle" style="--color: #fff">
+                <div class="dots h_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="hh"></circle>
+                </svg>
+                <div id="hours">00</div>
+                <div class="label">Hour</div> <!-- Add the label here -->
+            </div>
+            <div class="circle" style="--color: #fff">
+                <div class="dots m_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="mm"></circle>
+                </svg>
+                <div id="minutes">00</div>
+                <div class="label">Minute</div> <!-- Add the label here -->
+            </div>
+            <div class="circle" style="--color: #fff">
+                <div class="dots s_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="ss"></circle>
+                </svg>
+                <div id="seconds">00</div>
+                <div class="label">Second</div> <!-- Add the label here -->
+            </div>
+            <div class="ap">
+                <div id="ampm">AM</div>
+            </div>
+        </div>
+        <div class="quote">"Every second counts. Make the most of each moment and turn your dreams into
+            reality."<br>-Anonymous</div>
+    </div>
+
+</body>
+
+</html>
