@@ -1,22 +1,52 @@
 <?php
-session_start();
-include('helper/database.php');
-// error_reporting(0);
+// session_start();
+// include('helper/database.php');
+// // error_reporting(0);
 
-if ($_SESSION['is_login'] != 'yes') {
-    // $username = $_POST['name'];
-    // $password = $_POST['password'];
-    if ($_POST['username'] == 'admin' && $_POST['password'] == 'admin123') {
-        // set session/ cookies
-        $_SESSION['is_login'] = 'yes';
-        echo 'sdasd';
+// if ($_SESSION['is_login'] != 'yes') {
+//     // $username = $_POST['name'];
+//     // $password = $_POST['password'];
+//     if ($_POST['username'] == 'admin' && $_POST['password'] == 'admin123') {
+//         // set session/ cookies
+//         $_SESSION['is_login'] = 'yes';
+//         echo 'sdasd';
 
+//     } else {
+//         $_SESSION['is_login'] = 'no';
+//         session_destroy();
+//         header("location: /home/index.php");
+//     }
+// }
+
+require_once "helper/database.php";
+$pdo = connectDatabase();
+
+$login_error = false;
+$login_successful = false;
+
+if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Query check if the user exists in  database
+    $select_query = "SELECT * FROM register WHERE name = :username AND password = :password";
+    $stmt = $pdo->prepare($select_query);
+    $stmt->execute(array(':username' => $username, ':password' => $password));
+    $user = $stmt->fetch();
+
+    if ($user) {
+        $login_successful = true;
     } else {
-        $_SESSION['is_login'] = 'no';
-        session_destroy();
-        header("location: /home/index.php");
+        $login_error = true;
     }
 }
+
+if ($login_error) {
+    header("Location: /home/index.php");
+    echo "Login error";
+    exit();
+}
+?>
 
 ?>
 
@@ -27,6 +57,7 @@ if ($_SESSION['is_login'] != 'yes') {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -40,6 +71,7 @@ if ($_SESSION['is_login'] != 'yes') {
 <body>
     <div class="content">
         <div class="container">
+        <?php if ($login_successful) : ?>
             <h2 class="mb-2">Welcome to the home page. The post are:</h2>
             <div class="table-responsive custom-table-responsive">
                 <table class="table custom-table">
@@ -65,26 +97,6 @@ if ($_SESSION['is_login'] != 'yes') {
                             <td colspan="100"></td>
                         </tr>
 
-                        <tr scope="row">
-                            <td>2</td>
-                            <td>Emma Castro</td>
-                            <td>
-                                424 Mobu Grove
-                            </td>
-                        </tr>
-
-                        <tr class="spacer">
-                            <td colspan="100"></td>
-                        </tr>
-
-                        <tr scope="row">
-                            <td>3</td>
-                            <td>Corey Stevens</td>
-                            <td>
-                                876 Juhvi Avenue
-                            </td>
-                        </tr>
-
                         <tr class="spacer">
                             <td colspan="100"></td>
                         </tr>
@@ -101,6 +113,7 @@ if ($_SESSION['is_login'] != 'yes') {
                 &nbsp;&nbsp;
                 <a href="#" class="styled-button-pagination">&gt;&gt;</a>
             </div>
+            <?php endif?>
         </div>
 
     </div>
@@ -111,5 +124,4 @@ if ($_SESSION['is_login'] != 'yes') {
     <script src="js/main.js"></script>
 
 </body>
-
 </html>
