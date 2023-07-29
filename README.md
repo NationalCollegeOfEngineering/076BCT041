@@ -18,3 +18,10 @@ Form Validation
 
 #### Assignment6
 Form validation with Php and MySQL database
+Note: Change the table_name to your own table in MySQL database
+```
+<!-- home.php -->
+$select_query = "SELECT * FROM ==table_name== WHERE name = :username AND password = :password";
+<!-- signup.php -->
+$insert_query = "INSERT INTO ==table_name==(name, password, address) VALUES (:username, :password, :address)";
+```
