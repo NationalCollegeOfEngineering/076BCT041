@@ -17,7 +17,7 @@ Form Validation
 ![Form Validation](Assignment4/image/screenshot.png)
 
 #### Assignment6
-Form validation with Php and MySQL database
+Form validation with Php and MySQL database <br>
 Note: Change the table_name to your own table in MySQL database
 ```
 <!-- home.php -->
