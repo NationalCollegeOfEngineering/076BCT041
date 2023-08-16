@@ -25,3 +25,11 @@ $select_query = "SELECT * FROM ==table_name== WHERE name = :username AND passwor
 <!-- signup.php -->
 $insert_query = "INSERT INTO ==table_name==(name, password, address) VALUES (:username, :password, :address)";
 ```
+
+#### Assignment7
+Ajax Search 
+![Form Validation](Assignment7/images/screenshot.png)
+```
+<!-- server.php -->
+$select_query = "SELECT username, address, contact FROM table_name WHERE username LIKE '%".$_GET['search']."%'";
+```
